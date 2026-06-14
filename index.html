@@ -9,11 +9,16 @@
     body{margin:0;background:#0e0d0b;font-family:system-ui,sans-serif}
     model-viewer{width:100vw;height:100vh;--poster-color:#0e0d0b}
     .ar-btn{
-      position:absolute;bottom:24px;left:50%;transform:translateX(-50%);
-      background:#c9a24b;color:#0e0d0b;border:none;border-radius:30px;
-      padding:14px 28px;font-size:15px;font-weight:600;cursor:pointer;
-      box-shadow:0 4px 16px rgba(0,0,0,.4);z-index:10;
+      position:absolute;top:18px;right:18px;
+      width:46px;height:46px;
+      background:rgba(22,20,15,.7);backdrop-filter:blur(8px);
+      border:1px solid rgba(201,162,75,.5);border-radius:12px;
+      cursor:pointer;z-index:10;
+      display:flex;align-items:center;justify-content:center;
+      transition:border-color .2s,background .2s;
     }
+    .ar-btn:hover{border-color:#c9a24b;background:rgba(201,162,75,.15)}
+    .ar-btn svg{width:24px;height:24px;stroke:#c9a24b;fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
   </style>
 </head>
 <body>
@@ -28,7 +33,12 @@
   touch-action="pan-y"
   shadow-intensity="1"
   alt="3D model">
-  <button slot="ar-button" class="ar-btn">📱 Moshahede dar AR</button>
+  <button slot="ar-button" class="ar-btn" title="Moshahede dar AR">
+    <svg viewBox="0 0 24 24">
+      <path d="M12 2l8 4.5v9L12 20 4 15.5v-9L12 2z"/>
+      <path d="M12 2v9M12 11l8-4.5M12 11L4 6.5"/>
+    </svg>
+  </button>
 </model-viewer>
 
 </body>
